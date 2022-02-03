@@ -1,6 +1,6 @@
 import React from 'react';
 import './app.css';
-import Habit from './components/habit';
+import Habit from './components/habits';
 
 function App() {
   return <Habit />;
