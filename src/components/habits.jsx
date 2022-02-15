@@ -2,43 +2,22 @@ import React, { Component } from 'react';
 import Habit from './habit';
 
  class Habits extends Component {
-  state = {
-    habits: [
-      { id: 1, name: 'Reading', count: 0 },
-      { id: 2, name: 'Running', count: 0 },
-      { id: 3, name:'Coding', count: 0 }
-    ]
-  };
-
-  handleIncrease = (habit) => {
-    const habits = [...this.state.habits]
-    const index = habits.indexOf(habit)
-    habits[index].count++;
-    this.setState({ habits });
-    };
-  handleDecrease = (habit) => {
-    const habits = [...this.state.habits]
-    const index = habits.indexOf(habit)
-
-    this.setState({ habits });
-    };
-  handleDelete = (habit) => {
-    console.log(`delete ${habit}`)
-    };
 
   render() {
     return (
-    <ul>
-      {this.state.habits.map(habit => (
-        <Habit
-          key={habit.id}
-          habit={habit}
-          onIncrease={this.handleIncrease}
-          onDecrease={this.handleDecrease}
-          onDelete={this.handleDelete} />
-      ))}
-
-    </ul>
+      <>
+      <ul>
+        {this.props.habits.map(habit => (
+          <Habit
+            key={habit.id} // 리액트 제공 key 키워드. 배열 이터레잍 할 땐 키 값 반드시 프롭으로 전달해줘야함.
+            habit={habit}
+            onIncrease={this.props.onIncrease}
+            onDecrease={this.props.onDecrease}
+            onDelete={this.props.onDelete} /> // props으로 전달시켜주기 ~ 그래서 habit 컴포넌트에서 이 전달된 프롭에 접근해서 데이터 활용 가능 ~~
+        ))}
+      </ul>
+      <button className="habits-reset" onClick={this.props.onReset}>Reset</button>
+      </>
     );
   }
 }

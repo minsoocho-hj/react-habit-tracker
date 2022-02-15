@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 
 class Habit extends Component {
-    state = {
-      count: 0,
-    };
-
   handleIncrease = () => {
-    this.props.onIncrease(this.props.habit)
+    this.props.onIncrease(this.props.habit) //habits에서 전달된 프롭 받음 ~
     };
   handleDecrease = () => {
     this.props.onDecrease(this.props.habit)
@@ -15,8 +11,9 @@ class Habit extends Component {
     this.props.onDelete(this.props.habit)
     };
   render() {
-    const { name, count } = this.props.habit;
+    const { name, count } = this.props.habit; // this.props.habit.name /.count 여러개 있으면 축약형으로 작성.
     return <>
+
       <li className="habit">
           <span className="habit-name">{name}</span>
           <span className="habit-count">{count}</span>
