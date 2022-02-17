@@ -7,7 +7,7 @@ export default class Navbar extends Component {
         <nav>
         <i className="navbar-logo fas fa-leaf"></i>
         <h1>Habit tracker</h1>
-          <span className="nav-count">{this.props.totalCount}</span>
+        <span className="nav-count">{this.props.totalCount}</span>
       </nav>
       </>
     )
