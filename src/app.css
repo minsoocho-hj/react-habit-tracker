@@ -69,3 +69,22 @@ align-items: center;
   color: white;
   border-radius: 50%;
 }
+
+.add-input {
+  list-style: none;
+  border-style: none;
+  background-color: powderblue;
+  opacity: 0.8;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.add-btn, .habits-reset {
+  background-color: #BC8F8F;
+  color: #ffff;
+  font-size: 12px;
+  width: 100px;
+  height: 30px;
+  border-radius: 50px;
+  opacity: 0.8;
+}

@@ -21,6 +21,7 @@ class App extends Component {
     // this.setState({ habits: [...this.state.habits, newHabit] });
     this.setState({ habits: habits.concat(newHabit) });
     console.log(this.state.habits)
+    this.formRef.current.reset();
   };
 
   handleIncrease = (habit) => {
@@ -51,7 +52,7 @@ class App extends Component {
       habit.count = 0;
       return habit;
     });
-    this.setState({ habits })
+    this.setState({ habits });
   }
 
   render() {
