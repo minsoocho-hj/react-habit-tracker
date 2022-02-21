@@ -3,7 +3,8 @@ import Habit from './habit';
 
  class Habits extends Component {
 
-  render() {
+   render() {
+     console.log('habits');
     return (
       <>
       <ul>
@@ -15,8 +16,8 @@ import Habit from './habit';
             onDecrease={this.props.onDecrease}
             onDelete={this.props.onDelete} /> // props으로 전달시켜주기 ~ 그래서 habit 컴포넌트에서 이 전달된 프롭에 접근해서 데이터 활용 가능 ~~
         ))}
+        <button className="habits-reset" onClick={this.props.onReset}>Reset</button>
       </ul>
-      <button className="habits-reset" onClick={this.props.onReset}>Reset</button>
       </>
     );
   }
